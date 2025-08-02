@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elizabeth Atieno's personal portfolio showcasing projects, skills, and contact information.">
+  <title>Elizabeth Atieno | Portfolio</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+  <style>
+    :root {
+      --dark: #1e293b;
+      --light: #f8fafc;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+      background-color: #d8eefe;
+      padding: 40px;
+      color: #333;
+    }
+
+    header {
+      background-color: #030327;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 8px;
+}
+
+.main-title {
+  margin-bottom: 20px;
+}
+
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: #ede7f6;
+      margin: 20px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #09020e;
+      font-weight: bold;
+    }
+
+    .hero-image {
+      background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 1000px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      border-radius: 12px;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-text h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 span {
+      color: #ffd700;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-text button {
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #ffd700;
+      border: none;
+      color: #333;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-text button:hover {
+      background-color: #e6b800;
+
+    }
+
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 20px;
+      color: #1a237e;
+      text-align: center;
+    }
+
+    .into-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+
+    .into-section p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      color: #4a148c;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card a:hover h3 {
+      color: #1e88e5;
+      text-decoration: underline;
+    }
+
+    #education {
+      background-color: #f0f7ff;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    #education p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .download-cv {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cv-button {
+  display: inline-block;
+  background-color: #4a148c;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #7b1fa2;
+}
+
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fefefe;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-info {
+      font-size: 1.1em;
+      line-height: 2;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #1a131f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #2d1c42;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #f0f0f0;
+      padding: 50px 0 20px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="main-title">Portfolio</h1>
+    <p>Web Developer | Tech Enthusiast | Lifelong Learner</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>Hi, I am <span>Elizabeth Atieno</span><br />Web Developer & Designer</h1>
+      <p>I create beautiful, functional websites with a focus on user experience and modern design principles.</p>
+      <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
+  View My Work
+</button>
+
+    </div>
+  </div>
+
+  <section class="into-section" id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm Elizabeth, a passionate web developer with a love for creating functional and beautiful web experiences. As a newbie in the tech industry, I am proud to say that this is my first ever project with clear and concise code.</p>
+    <p>My journey in tech began during my university years, where I developed an interest in solving problems through code. Since then, I've been doing a little bit of research to understand coding better.I'm passionate about using technology as a tool for creativity, connection, and change. I love building beautiful, user-friendly websites that not only solve problems but also empower communities, especially girls and women in tech. With every line of code, I aim to create experiences that are inclusive, meaningful, and impactful.</p>
+    <p>I believe that after this program I will be able to write clean, efficient code and create intuitive user interfaces that provide meaningful experiences. When I'm not coding, I'm either crocheting or reading material on software development to understand more about the tech world.</p>
+  </section>
+
+  <section id="education">
+    <h2>Educational Background</h2>
+    <p><b>Bachelor of Arts</b></p>
+    <p><b>Maseno University</b></p>
+    <p><b>Specialized in Sociology With IT</b></p> 
+    <div class="download-cv">
+  <a href="ELIZABETH_OCHIENG(CURRICULUM_VITAE).pdf" download class="cv-button">📄 Download My CV</a>
+    </div>
+
+  </section>
+
+  <h2 id="skills">👩‍💻 Programming Languages</h2>
+  <div class="cards-container">
+    <div class="card">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+        <h3>💻 HTML</h3>
+        <p>The building block of web pages — used to structure content on the web.</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+        <h3>🎨 CSS</h3>
+        <p>Style your web content beautifully — add colors, layouts, and responsive designs.</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+        <h3>⚙️ JavaScript</h3>
+        <p>Brings your websites to life — create interactive, dynamic, and responsive features.</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://www.python.org/doc/" target="_blank">
+        <h3>🐍 Python</h3>
+        <p>Powerful and beginner-friendly — great for automation, AI, data, and backend development.</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://www.w3schools.com/sql/" target="_blank">
+        <h3>💾 SQL</h3>
+        <p>Manage and query data from databases — essential for backend and data-driven applications.</p>
+      </a>
+    </div>
+  </div>
+
+  <section id="interests">
+    <h2>💡 Interests</h2>
+    <div class="cards-container">
+      <div class="card">
+        <h3>🌐 Web Development</h3>
+        <p>Exploring modern frameworks and best practices to build responsive and scalable web experiences.</p>
+      </div>
+      <div class="card">
+        <h3>🚀 Tech Innovations</h3>
+        <p>Staying current with emerging trends, tools, and cutting-edge technology shaping the future.</p>
+      </div>
+      <div class="card">
+        <h3>👩‍💻 Community Engagement</h3>
+        <p>Supporting girls in STEM and promoting digital literacy to build inclusive tech communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>📂 Projects</h2>
+    <div class="cards-container">
+      <div class="card">
+        <a href="https://lizzie25atieno.github.io/First-Hakathon-Challenge/" target="_blank"></a>
+        <h3>🌟 Portfolio Website</h3>
+        <p>This current responsive personal portfolio site you're viewing — built using HTML & CSS.</p>
+      </div>
+      <div class="card">
+        <a href="https://lizzie25atieno.github.io/july-2025-introduction-to-html-5-Lizzie25atieno/" target="_blank">
+          <h3>📘 First Project</h3>
+          <p>A basic HTML-only site showcasing introductory skills from my first tech class in 2025.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-section">
+    <h2>Contact Me</h2>
+    <div id="contact">
+      <div class="contact-info">
+        <strong>Email</strong><br />
+       elizabethatienoochieng2019@gmail.com<br /><br />
+        <strong>Phone</strong><br />
+        +254712544248<br /><br />
+        <strong>Location</strong><br />
+        Nairobi, Kenya
+      </div>
+      <form action="https://formspree.io/f/maypwlrb" method="POST">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Elizabeth Atieno. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+
+
